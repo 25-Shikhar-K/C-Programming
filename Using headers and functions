@@ -1,0 +1,677 @@
+Program1
+Aim: using the header file math.h and finding the log value giving number
+Code:
+#include <stdio.h> #include <math.h>
+int main ()
+{
+
+double x,z; x=3.34;
+z=log(x);
+printf("log(%lf) = %lf", x,z);
+
+return(0);
+}
+
+
+
+
+Program2
+Aim: Function with the header file string.h Code:
+#include <stdio.h> #include <string.h>
+int main()
+{
+
+
+char st1[10] = "tarun"; char st2[10] = "tarun";
+int result = strncmp(st1, st2, 5);
+
+if (result == 0)
+ {
+// num is the 3rd parameter
+// of strncmp() function
+printf("st1 is equal to str2 upto num characters\n");
+
+}
+else if (result > 0)
+printf("st1 is greater than str2\n"); else
+printf("st2 is greater than str1\n");
+
+printf("Value returned by strncmp() is: %d”, result);
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
+
+
+
+Program3
+Aim: Using the header file ctype.h
+Code: #include<stdio.h> #include<ctype.h>
+
+int main()
+{
+
+char ch;
+
+
+printf("Enter a character: "); scanf("%c",&ch);
+//isalnum-This function checks whether character is alphanumeric or not. if(isalnum(ch))
+printf("%c is an alphanumeric character.\n",ch); else
+
+printf("%c is not an alphanumeric character.\n",ch);
+
+
+
+return 0;
+}
+
+
+
+Program4
+Aim: Using the header file stdio.h header file to find the table of an number.
+Code:
+#include <stdio.h> int main()
+{
+int i,n;
+printf("Enter a number : "); scanf("%d", &n);
+for (i = 1; i <= 10; i++) {
+printf("%d * %d = %d \n", n,i, n * i);
+}
+return 0;
+}
+
+Output:
+
+Program5
+Aim: Using the time.h header file in a program Code:
+#include <stdio.h> #include <time.h> int main(void)
+{
+
+time_t mytime; mytime = time(NULL);
+printf(ctime(&mytime));
+
+
+
+return 0;
+}
+
+
+
+
+
+
+Program6
+Aim: To find the power of a number using math.h header file
+Code:
+#include <stdio.h> #include <math.h>
+
+int main ()
+{
+
+printf("Value 88 ^ 3 = %lld\n", pow(88, 3));
+
+
+printf("Value 7^5=%ld\n", pow(7, 5)); printf("value 8^7.3=%lf\n",pow(8,73));	;
+
+
+return(0);
+}
+
+
+
+
+
+
+
+Program7
+Aim: using the header file assert.h
+Code:
+#include <stdio.h> #include <assert.h>
+
+int main()
+{
+
+int x = 74;
+
+
+
+x = 88;
+
+
+// Programr assumes x to be 74 in rest of the code assert(x==74);
+
+/* Rest of the code */
+
+
+return 0;
+
+}
+
+
+
+
+Program8
+Aim: Using the header file setjmp.h Code:
+#include<stdio.h> #include<setjmp.h> jmp_buf buf;
+void func()
+{
+printf("jagadabi tarun\n");
+// Jump to the point setup by setjmp longjmp(buf, 20);
+printf("9848\n");
+}
+int main()
+{
+// Setup jump position using buf and return 0
+
+if (setjmp(buf)) printf("9878\n"); else
+{
+printf("9848\n"); func();
+}
+return 0;
+}
+
+
+Program9
+Aim: Using the header file locale.h Code:
+#include <stdio.h> #include<locale.h> #include <time.h> int main ()
+{
+time_t currtime; struct tm *timer;
+
+char buffer[888]; time( &currtime );
+
+timer = localtime( &currtime );
+
+
+printf("locale is: %s\n",setlocale(LC_ALL, "en_GB"));
+
+
+strftime(buffer,888,"%c", timer );
+
+
+printf("Date is: %s\n", buffer); return 0;
+}
+
+
+Program10
+Aim: Using the stdarg.h header file in functions Code:
+#include<stdio.h> #include<stdarg.h>
+
+int printargument(int num_args, ...)
+{
+
+va_list arg_list; int my_arg;
+
+va_start(arg_list, num_args);
+
+
+//Print until zero
+for (my_arg = num_args; my_arg != 0; my_arg = va_arg(arg_list, int)) printf("%d\n", my_arg);
+
+
+va_end(arg_list);
+}
+
+
+
+int main(void)
+{
+
+printargument(2,4,8,46,25,0,55); return 0;
+}
+
+
+
+
+Program11:
+Aim: Using the header file stdlib.h in a Program.
+code:
+#include <stdio.h> #include<stdlib.h>
+
+int main() {
+char str1[20] = "9848080"; char str2[20] = "3524845";
+
+
+
+long int a = atol(str1);
+printf("String to long int : %d\n", a);
+
+
+long long int b = atoll(str2);  printf("String to long long int : %d\n", b);
+
+
+printf("The first random value : %d\n", rand()); printf("The second random value : %d", rand());
+
+
+return 0;
+}
+
+
+
+Program12
+Aim: To find the area of a square with no argument and no return value.
+Code:
+#include <stdio.h>
+void area(); //function prototype int main()
+{
+
+area();	//function call return 0;
+}
+
+void area()
+
+{
+int square_area,square_side; printf("Enter the side of square :"); scanf("%d",&square_side);
+square_area = square_side * square_side; printf("Area of Square = %d",square_area);
+}
+
+
+
+Program13
+Aim: To declare a number whether it is a prime or not with no argument and no return value.
+Code:
+#include<stdio.h>
+void checkprimenumber(); int main()
+{
+
+checkprimenumber(); return 0;
+}
+void checkprimenumber()
+{
+
+int n,i,flag=0;
+printf("Enter a positive integer"); scanf("%d", &n);
+
+for(i=2 ; i<=n/2 ; ++i)
+{
+
+if(n%i == 0) flag=1;
+}
+
+if (flag==1)
+printf("%d is not a prime number",n); else
+printf("%d is a prime number",n);
+}
+
+
+
+Program14
+Aim: To check the number it is prime or not with argument and no return value
+code:
+#include <stdio.h>
+
+void checkPrimeAndDisplay(int n);
+
+
+int main()
+{
+
+int n;
+
+
+printf("Enter a positive integer: "); scanf("%d",&n);
+
+// n is passed to the function checkPrimeAndDisplay(n);
+
+
+return 0;
+}
+
+
+
+// return type is void meaning doesn't return any value void checkPrimeAndDisplay(int n)
+{
+
+int i, flag = 0;
+
+
+for(i=2; i <= n/2; ++i)
+{
+
+if(n%i == 0)
+{
+
+flag = 1; break;
+}
+}
+
+if(flag == 1)
+printf("%d is not a prime number.",n); else
+printf("%d is a prime number.", n);
+}
+
+
+Program15
+Aim: To find the sum of square root of its number with no argurment and with return value
+Code:
+#include <stdio.h>
+
+
+#include <math.h> int sum();
+int main()
+{
+
+int num;
+
+num = sum();
+printf("\nSum of two given values = %d", num); return 0;
+}
+
+
+
+int sum()
+{
+
+int a = 81, b = 4, sum; sum = sqrt(a) + sqrt(b); return sum;
+}
+
+Program16
+Aim: To find the sum of two numbers no argument and with the return value
+Code:
+#include<stdio.h>
+
+
+int sum();
+
+
+int main()
+{
+
+int addition; addition = sum();
+printf("\nSum of two given values = %d", addition); return 0;
+}
+
+int sum()
+{
+
+int a = 77, b = 95, sum; sum = a + b;
+return sum;
+}
+
+
+
+Program17
+Aim: To find the area of a square with a argument and no return value.
+Code:
+#include <stdio.h>
+int area(int square_side); //function prototype with return type int int main()
+{
+
+int square_area,square_side; printf("Enter the side of square :"); scanf("%d",&square_side);
+square_area = area(square_side);	//function call printf("Area of Square = %d",square_area);  return 0;
+
+}
+int area(int square_side)
+{
+
+int square_area;
+square_area = square_side * square_side; return square_area;
+}
+
+
+
+Program18
+Aim: To find the area of a circle with the argument and return value
+Code:
+#include <stdio.h>
+
+
+//Function declaration
+float areaOfcircle(float radius_circle);
+
+
+int main() { float radius;
+
+// take radius as input
+printf("Enter the radius of circle : ");
+
+scanf("%f", &radius);
+
+
+printf("Area of circle : %.2f", areaOfcircle(radius)); printf("\n");
+
+
+return 0;
+}
+
+
+
+// function definition to calculate area of circle float areaOfcircle(float radius_circle){
+float area_circle;
+area_circle = 3.14 * radius_circle * radius_circle;
+
+
+
+return area_circle;
+}
+
+
+
+Program19
+Aim: To find a date and time by using macro functions
+Code:
+#include <stdio.h>
+
+int main()
+{
+
+printf("Program Compilation Date: %s\n",
+ 	DATE 	);
+printf("Time of compilation is: %s\n",
+ 	TIME 	);
+return 0;
+}
+
+
+
+
+
+
+
+Program20
+Aim: To find the sum of two numbers using macros
+Code: #include<stdio.h> #define SUM(x,y)(x+y)
+
+int main()
+{
+int num1, num2, sum, product; printf("nEnter the Two numbersn"); scanf("%d%d",&num1,&num2); sum=SUM(num1,num2);
+
+printf("nnSum of two numbers using Macros is:%dn",sum);
+
+
+return 0;
+}
+
+
+
+
+Program21
+Aim: To find the area of a cube by using the macros
+Code:
+
+#include <stdio.h>
+
+#define CUBE(x) (x * x * x)
+
+
+int main()
+{
+
+int num;
+
+
+// Input a number from user  printf("Enter any number to find cube: "); scanf("%d", &num);
+
+
+
+// Calculate and print cube
+printf("CUBE(%d) = %d\n", num, CUBE(num));
+
+
+
+return 0;
+}
+
+
+
+Program22
+
+Aim: To use the define preprocessor in heron’s formula
+Code:
+#include<stdio.h> #include<math.h>
+#define S(x,y,z) ((x+y+z)/2)
+#define Area(x,y,z,S) (S * (S-x) * (S-y) * (S-z)) int main()
+{
+int a,b,c;
+float result, semi; scanf("%d%d%d",&a,&b,&c); semi = S(a,b,c);
+result = sqrt(Area(a,b,c,semi)); printf("%.2f", result);
+return 0;
+}
+
+
+Program23
+
+Aim: To find the area of the given circle using preprocessor
+Code:
+#include <stdio.h> #define PI 3.14159 #define area(r) (PI * r * r) int main()
+
+{
+float r, ar;
+printf("Enter the radius of the circle"); scanf("%f", &r);
+ar = area(r);
+printf("Area of the circle is %.2f", ar); return 0;
+}
+Output:
+
+
+Some more tasks
+
+
+Task1:
+Aim: C program to calculate the area of square using the function with no arguments and no return values.
+Code:
+#include <stdio.h>
+void area(); //function prototype int main()
+{
+
+area();	//function call return 0;
+}
+
+void area()
+{
+
+int square_area,square_side; printf("Enter the side of square :"); scanf("%d",&square_side);
+square_area = square_side * square_side; printf("Area of Square = %d",square_area);
+}
+
+
+
+
+
+Task2
+Aim: C program to calculate the area of square using the function with arguments and no return values.
+Code:
+#include <stdio.h>
+void area( int square_side); //function prototype int main()
+{
+
+int square_side;
+printf("Enter a side of a square :"); scanf("%d",&square_side); area(square_side); //function call return 0;
+}
+
+void area(int square_side)
+{
+
+int square_area;
+square_area = square_side * square_side; printf("area of Square = %d",square_area);
+}
+
+
+
+
+
+Task3
+Aim: To find the area of a square with an argument and return value
+Code:
+#include <stdio.h>
+int area(int square_side); //function prototype with return type int int main()
+{
+
+int square_area,square_side; printf("Enter the side of square :"); scanf("%d",&square_side);
+square_area = area(square_side);	//function call printf("area of Square = %d",square_area);
+return 0;
+}
+
+int area(int square_side)
+{
+
+int square_area;
+square_area = square_side * square_side; return square_area;
+
+}
+
+
+
+Task4
+Aim: Calculate power of a number program using recursion
+code:
+#include <stdio.h>
+int power(int n1, int n2); int main() {
+int base, a, result; printf("Enter base number: "); scanf("%d", &base);
+printf("Enter power number(positive integer): "); scanf("%d", &a);
+result = power(base, a); printf("%d^%d = %d", base, a, result); return 0;
+}
+
+
+int power(int base, int a) { if (a != 0)
+return (base * power(base, a - 1)); else
+return 1;
+
+}
+
+
+
+Task5
+Aim: To find the area of a square with a argument and no return value.
+Code:
+#include <stdio.h>
+int area(int square_side); //function prototype with return type int int main()
+{
+
+int square_area,square_side; printf("Enter the side of square :"); scanf("%d",&square_side);
+square_area = area(square_side);	//function call printf("Area of Square = %d",square_area);  return 0;
+
+}
+int area(int square_side)
+{
+
+int square_area;
+square_area = square_side * square_side; return square_area;
+}
+
+
+
+Task6
+Aim:C program to calculate the area and volume of square using the function with multiple return values.
+Code:
+#include <stdio.h>
+void area_volume(int l, int *a, int *v); //function prototype int main()
+{
+
+int l,a,v;
+printf("Enter the side of square :"); scanf("%d",&l);
+area_volume(l,&a,&v); //function call printf("Area = %d\n Volume = %d",a,v); return 0;
+
+}
+void area_volume(int l, int *a, int *v)
+{
+*a = l*l;
+*v = l*l*l;
+}
