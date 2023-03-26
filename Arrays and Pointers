@@ -1,0 +1,789 @@
+Program1
+Aim: To Write a program in C to store elements in an array and print it.
+Code: #include<stdio.h> int main()
+{
+
+int values[10];
+printf("enter the ten values;");
+
+for(int i=0 ;i<=9; i++)
+{
+scanf("%d",&values[i]);
+}
+
+printf("exhibiting the values :"); for(int i=0;i<=9;i++)
+{
+printf("%d\n",values[i]);
+
+}
+
+
+return 0;
+
+      }
+
+
+ 
+
+
+Program2
+Aim: To Write a program in C to find the sum of all elements of the array.
+Code:
+#include <stdio.h> int main()
+{
+
+int marks[10], i, n, sum = 0;
+
+
+printf("Enter number of elements: "); scanf("%d", &n);
+for(i=0; i<n; ++i)
+{
+
+printf("Enter number%d: ",i+1); scanf("%d", &marks[i]);
+
+
+ sum += marks[i];
+}
+
+
+printf("sum = %d", sum);
+
+
+return 0;
+}
+
+ 
+
+
+
+
+Program3
+Aim: Write a program in C to copy the elements of one array into another array.
+Code: #include<stdio.h> int main()
+{
+
+int arr1[10], arr2[10], i, num;
+
+
+printf("\nEnter number of elements:"); scanf("%d", &num);
+
+printf("\nEnter the values :"); for (i = 0; i < num; i++) {
+scanf("%d", &arr1[i]);
+
+}
+
+
+/* Copying data from array 'a' to array 'b */ for (i = 0; i < num; i++) {
+arr2[i] = arr1[i];
+
+}
+
+//Printing of all elements of array printf("The second array is :"); for (i = 0; i < num; i++)
+printf("\narr2[%d] = %d", i, arr2[i]);
+
+
+
+return (0);
+}
+
+ 
+
+
+
+Program4
+Aim:Write a program in C to sort the given elements by user in array in ascending order.
+Code:
+#include <stdio.h> int main()
+
+{
+int arr[5]={4,54,71,87,1};
+
+int i, j, temp;
+
+for(i=0; i<5; i++)
+{
+
+
+for(j=i+1; j<5; j++)
+{
+if(arr[i] > arr[j])
+{
+
+temp	= arr[i]; arr[i] = arr[j]; arr[j] = temp;
+}
+}
+}
+
+
+/* Print the sorted array */
+printf("\n print the elements of array in ascending order: "); for(i=0; i<5; i++)
+{
+
+printf("%d\n", arr[i]);
+}
+
+return 0;
+}
+ 
+
+Program5
+Aim:Write a program in C to sort elements of array in ascending order.
+Code:
+#include <stdio.h>
+#define MAX_SIZE 100	// Maximum array size
+
+
+int main()
+{
+
+int arr[MAX_SIZE]; int size, i, j, temp;
+
+
+
+printf("Enter size of array: "); scanf("%d", &size);
+
+printf("Enter elements in array: "); for(i=0; i<size; i++)
+{
+
+scanf("%d", &arr[i]);
+}
+
+
+for(i=0; i<size; i++)
+{
+
+for(j=i+1; j<size; j++)
+{
+if(arr[i] > arr[j])
+{
+
+temp	= arr[i];
+
+arr[i] = arr[j]; arr[j] = temp;
+}
+}
+}
+
+
+
+/* Printing the elements in array in ascdnding order */ printf("\nElements of array in ascending order: "); for(i=0; i<size; i++)
+{
+
+printf("%d\t", arr[i]);
+}
+
+
+
+return 0;
+}
+
+ 
+
+
+Program6
+Aim: Write a program in C to sort elements of the arrayin descending order.
+Code:
+#include <stdio.h>
+#define MAX_SIZE 100	// Maximum array size
+
+
+int main()
+{
+
+int arr[MAX_SIZE]; int size, i, j, temp;
+
+
+
+printf("Enter size of array: "); scanf("%d", &size);
+
+// Input elements in array printf("Enter elements in array: "); for(i=0; i<size; i++)
+{
+
+scanf("%d", &arr[i]);
+}
+
+
+
+for(i=0; i<size; i++)
+{
+
+
+for(j=i+1; j<size; j++)
+{
+
+//Swaping the numbers and plcing it if is not positioned in descending order
+if(arr[i] < arr[j])
+{
+
+temp	= arr[i]; arr[i] = arr[j]; arr[j] = temp;
+}
+}
+}
+
+
+
+/* Printing the elements in array in descednding order */ printf("\nElements of array in descending order: "); for(i=0; i<size; i++)
+{
+
+printf("%d\t", arr[i]);
+
+}
+return 0;
+}
+
+
+ 
+
+Program7
+Aim: Write a program in C to sort the given elements by user in array in descending order.
+Code:
+#include <stdio.h> int main()
+{
+
+int arr[7]={44,4,41,547,74,42,589};
+
+
+int i, j, temp;
+
+for(i=0; i<7; i++)
+{
+
+
+for(j=i+1; j<7; j++)
+{
+
+
+//Swaping the numbers and plcing it if is not positioned in descending order
+
+
+if(arr[i] < arr[j])
+{
+
+temp	= arr[i]; arr[i] = arr[j]; arr[j] = temp;
+}
+}
+}
+
+
+
+/* Print the sorted array */
+printf("\n print the elements of array in descending order: ");
+for(i=0; i<7; i++)
+
+{
+printf("%d\n", arr[i]);
+}
+
+return 0;
+}
+ 
+
+
+
+Program8
+Aim: To write a program in C to insert New value in the array (unsorted list).
+Code
+#include <stdio.h> #define MAX_SIZE 100
+
+int main()
+{
+
+int arr[MAX_SIZE];
+
+int i, size, num, pos;
+
+
+/* Input size of the array */ printf("Enter size of the array : "); scanf("%d", &size);
+
+// Input elements in array printf("Enter elements in array : "); for(i=0; i<size; i++)
+{
+
+scanf("%d", &arr[i]);
+}
+
+
+
+// Input the element and position to insert printf("enter an element to insert: "); scanf("%d", &num);
+printf("enter the element position: "); scanf("%d", &pos);
+
+// If position of element is not valid if(pos > size+1 || pos <= 0)
+{
+
+printf("once check the size as given is incorrect", size);
+}
+
+else
+{
+
+for(i=size; i>=pos; i--)
+{
+
+arr[i] = arr[i-1];
+}
+
+
+
+// Inserting the new element at given position by incrementing the size
+arr[pos-1] = num; size++;
+
+// Printthe elements of array after inserting the element at desired position
+printf("elements of array after insertion : "); for(i=0; i<size; i++)
+{
+
+printf("%d\n", arr[i]);
+}
+}
+
+
+
+return 0;
+}
+
+ 
+
+Program9
+Aim:Write a program in C for a 2D array of size 3x3 and print the matrix.
+Code: #include<stdio.h> int main()
+{
+
+int a[3][3] = { {0,0,7}, {1,2,5}, {2,4,8}};
+int i, j;
+/* output   each array element's value */ for ( i = 0; i < 3; i++ )
+{
+for ( j = 0; j < 3; j++ )
+{
+printf("a[%d][%d] = %d\n", i,j, a[i][j] );
+
+}
+}
+printf("the matrix is:\n"); for(i=0; i<3; i++)
+{
+
+for(j=0;j<3;j++)
+{
+printf("%d ", a[i][j]); if(j==2)
+{
+printf("\n");
+
+}
+}
+}
+
+return 0;
+}
+
+ 
+
+
+Program10
+Aim: Write a program in C for subtraction of two Matrices.
+Code:
+#include <stdio.h > int main()
+{
+
+int mat1[10][10], mat2[10][10]; int difference[10][10] ;
+int i,j,a,b;
+printf("Enter the number of rows and columns of matrix"); scanf("%d%d", &i, &j);
+printf("Enter the elements of first matrix\n"); for (a = 0; a < i; a++)
+for (b = 0; b< j; b++)
+
+
+scanf("%d", & mat1[a][b]);
+
+
+printf("Enter the elements of second matrix\n"); for (a = 0; a < i; a++)
+for (b = 0; b < j; b++)
+scanf("%d", & mat2[a][b]);
+
+
+printf("Difference of entered matrices:-\n"); for (a = 0; a < i; a++)
+
+{
+for (b = 0; b < j; b++)
+{
+
+difference[a][b] = mat1[a][b] - mat2[a][b];
+printf("%d\t", difference[a][b]);
+}
+
+printf("\n");
+}
+
+return 0;
+}
+
+ 
+
+Program11
+Aim: Write a program in C to find the maximum and minimum element in an array.
+
+Code:
+#include <stdio.h> #define MAX_SIZE 100
+
+int main()
+{
+
+int arr[MAX_SIZE]; int i,size,min,max;
+
+printf("Enter the size of array:"); scanf("%d", &size);
+
+
+
+printf("Enter elements in array : "); for(i=0; i<size; i++)
+{
+
+scanf("%d",&arr[i]);
+}
+
+
+
+min=max=arr[0]; for(i=1; i<size; i++)
+{
+
+if(min>arr[i])
+min=arr[i];
+
+if(max<arr[i]) max=arr[i];
+}
+
+printf("minimum of array is : %d",min); printf("\nmaximum of array is : %d",max);
+
+
+
+
+return 0;
+}
+
+ 
+
+
+
+Program12
+Aim:Write a program in C to separate odd and even integers in separate arrays.
+Code:
+#include <stdio.h> #define MAX_SIZE 100 int main()
+
+{
+int arr[MAX_SIZE]; int i,size;
+printf("Enter size of the array\n"); scanf("%d",&size);//reads input from user for array size printf("Enter the elements of the array\n");
+for(i=0; i<size; i++)
+{
+scanf("%d",&arr[i]);//reads input from user for array elements
+
+}
+printf("odd numbers in the array are \n"); for(i=0; i<=size; i++)
+{
+if (arr[i]%2==1)
+{
+printf("%d \t",arr[i]);
+
+}
+}
+
+printf("\neven numbers in the array are \n"); for(i=0; i<size; i++)
+{
+if(arr[i]%2==0)
+{
+printf("%d \t",arr[i]);
+
+}
+}
+
+
+
+
+
+return 0;
+}
+
+
+
+
+
+
+ 
+
+
+
+Program13
+Aim:Write a program in C to read n number of values in an array and display it in reverse order.
+Code:
+#include <stdio.h> #define MAX_SIZE 100
+
+int main()
+{
+
+int arr[MAX_SIZE]; int i,size;
+/* Input size of array */ printf("Enter size of the array: "); scanf("%d", &size);
+
+/* Input array elements */ printf("Enter elements in array: "); for(i=0; i<size; i++)
+{
+
+scanf("%d", &arr[i]);
+} /*
+* Print array in reversed order
+*/
+printf("\nArray in reverse order: "); for(i = size-1; i>=0; i--)
+{
+
+printf("%d\t", arr[i]);
+}
+
+return 0;
+}
+
+
+
+ 
+
+Program14
+Aim:Write a program in C to print all unique elements in an array, like Input the number of elements to be stored in the array.
+Code:
+#include<stdio.h> #define MAX_SIZE 100 int main()
+{
+int arr[MAX_SIZE]; int i, j;
+int size;
+
+
+printf("Enter number of elements in array\n"); scanf("%d", &size);
+printf("Enter %d numbers\n", size);
+
+
+
+for(i = 0; i < size; i++)
+{
+scanf("%d", &arr[i]);
+}
+
+
+printf("unique elements are:\n"); for(i = 0; i < size; i++) {
+for (j=0; j<i; j++){
+if (arr[i] == arr[j]) break;
+}
+
+
+if (i == j){
+
+
+
+printf("%d ", arr[i]);
+}
+}
+
+return 0;
+}
+
+ 
+
+
+
+Program15
+Aim: Write a c program to print the value and address of an variable using pointer.
+Code:
+#include <stdio.h> int main ()
+{
+int a = 20;	//variable declaration int *p= &a;
+// print the address of a
+printf("Address of variable a: %x\n", &a );
+
+
+//print the address stored in pointer printf("Address stored in p variable: %x\n", p );
+
+
+
+
+
+// print the value of a using the pointer variable printf("Value of *p variable: %d\n", *p );
+
+return 0;
+
+
+}
+ 
+
+Program16
+Aim:Write a C program to swap two numbers using pointers concept.
+Code:
+#include<stdio.h>
+void swap_num(int *value1,int *value2)
+{
+
+int temp; temp = *value1;
+
+*value1 = *value2;
+
+
+*value2 = temp;
+
+
+
+}
+
+
+int main()
+
+
+{
+
+
+int num1,num2;
+
+
+printf("enter value of swap number1: "); scanf("%d",&num1);
+printf("enter value of swap number2: "); scanf("%d",&num2);
+//Print Values before Swapping
+
+
+printf("Before Swapping : number1=%d, number2=%d\n",num1,num2);
+
+
+swap_num(&num1,&num2);
+//Print Values after Swapping printf("After Swapping : number1=%d,
+number2=%d\n",num1,num2); return 0;
+
+}
+ 
+
+Program17
+Aim: To write a c Program for incrementation and decrementation for the variable using pointers.
+Code:
+#include <stdio.h> int main()
+{
+int a =777; int *p;
+p = &a;
+
+printf("the values after of a using increment and decrement funcion in pointers\n");
+
+
+// to apply the Post increment to a (*p)++;
+printf("[a]:increment Value of A = %d\n",*p);
+
+
+
+// to apply the Pre increment to a
+++(*p);
+printf("[a]:increment Value of A = %d\n" ,*p);
+
+
+// to apply the Post decrement to a (*p)--;
+printf("[a]:decrement Value of A = %d\n", *p);
+
+
+// to apply the Pre decrement to a
+--(*p);
+printf("[a]:decrement Value of A = %d\n",*p);
+
+
+
+
+
+return 0;
+}
+
+ 
+
+
+
+
+
+
+
+
+Program18
+Aim: To write a c program for printing array values using pointers
+Code:
+#include <stdio.h>
+
+
+int main()
+{
+
+
+int arr[5] = {74, 24, 31, 47, 45};
+int i;
+
+
+int *p = arr;
+
+
+for (i = 0; i <=4; i++)
+
+{
+printf("%d\n", *p); p++;
+}
+
+
+
+return 0;
+}
+
+ 
+
+Program19
+Aim: write a c program to print the address of values in an array, by using for loop.
+Code:
+#include <stdio.h> int main( )
+{
+
+int arr[6] = { 174, 274, 41, 25, 75, 77 } ;
+int *p = arr;
+
+
+
+// print the adress of values for ( int i = 0 ; i <=5 ; i++ )
+{
+
+
+
+printf("arr[%d]: address is %d\n",i,p);
+}
+
+
+
+return 0;
+}
+
+
+
+ 
+
+
+Program20
+Aim: write a c program to print the values and address of elements in array.
+We can print these in two ways:
+
+1.  code:
+#include <stdio.h> int main( )
+{
+
+int arr[6] = { 174, 274, 41, 25, 75, 77 } ;
+int *p = arr;
+// print the values and addresss respectively for ( int i = 0 ; i <=5 ; i++ )
+{
+
+printf("arr[%d]: value is %d\n",i, *p); printf("arr[%d]: address is %d\n",i, p);
+}
+return 0;
+}
+
+ 
+
+
+
+2.Code:
+#include <stdio.h> int main( )
+{
+
+int arr[6] = { 174, 274, 41, 25, 75, 77 } ;
+int *p= arr;
+// print the values and address respectively for ( int i = 0 ; i <=5 ; i++ )
+{
+
+printf("arr[%d]: value is %d and address is %d\n", i,
+*p,p);
+}
+return 0;
+}
+
+  
+
